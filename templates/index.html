@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+
+    <style>
+        body{
+            background-color: #e2e2e2;
+        }
+        h1{
+            text-align: center;
+            font-family: 'Arial';
+            font-size: 50px;
+            color: #2e2e2e;
+        }
+        h2{
+            text-align: center;
+            font-family: 'Arial';
+            font-size: 30px;
+            color: #2e2e2e;
+        }
+        .container{
+            width: 50%;
+            height: 50%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            border: 5px solid black;
+        }
+        .container form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 30px;
+        }
+        form input{
+            width: 50%;
+            font-size: 30px;
+            padding: 10px;
+            margin: 10px;
+            background-color: rgb(218, 218, 218);
+        }
+        form #button{
+            width: 50%;
+            font-size: 30px;
+            background-color: #2e2e2e;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        #button:hover{
+            background-color: rgb(77, 77, 77);
+            color: #ffffff;
+            cursor: pointer;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <h1>Password Generator</h1>
+    <div class="container">
+        <form action="result" method="post">
+            <label for="length">Password Length:</label>
+            <input type="number" name="lengths" id="lengths" min="8" max="20">
+            <input id="button" type="submit" value="Generate">
+        </form>
+        {%for message in get_flashed_messages()%}
+        <h2>{{password}}</h2>
+        {%endfor%}
+    </div>
+</body>
+</html>
